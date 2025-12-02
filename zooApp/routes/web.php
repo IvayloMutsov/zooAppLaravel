@@ -2,6 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\PhotoAdminController;
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::get('/admin/photos', [PhotoAdminController::class, 'index'])->name('admin.photos.index');
+    Route::post('/admin/photos', [PhotoAdminController::class, 'store'])->name('admin.photos.store');
+    Route::get('/admin/photos/{photo}/edit', [PhotoAdminController::class, 'edit'])->name('admin.photos.edit');
+    Route::patch('/admin/photos/{photo}', [PhotoAdminController::class, 'update'])->name('admin.photos.update');
+    Route::delete('/admin/photos/{photo}', [PhotoAdminController::class, 'destroy'])->name('admin.photos.destroy');
+});
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/photos', [PhotoController::class, 'index'])->name('photos.index');

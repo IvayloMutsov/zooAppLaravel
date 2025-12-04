@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PhotoAdminController;
+use App\Http\Controllers\AnimalController;
+
+Route::get('/', function () {
+    $animals = \App\Models\Animal::latest()->take(10)->get();
+    return view('welcome', compact('animals'));
+});
 
 Route::middleware(['auth'])->group(function () {
     

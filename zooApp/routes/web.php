@@ -24,6 +24,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('animals', AnimalController::class);
 });
 
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', UserController::class);
+});
+
 Route::get('/', function () {
     $animals = \App\Models\Animal::latest()->take(10)->get();
     return view('welcome', compact('animals'));

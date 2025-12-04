@@ -39,6 +39,25 @@ new class extends Component
                     <x-nav-link :href="route('admin.photos.index')" :active="request()->routeIs('admin.photos.*')">
                         🛠 Admin Photos
                     </x-nav-link>
+                    @if(Auth::check())
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+        <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
+            {{ __('Admin Dashboard') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.*')">
+            {{ __('Types') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('admin.breeds.index') }}" :active="request()->routeIs('admin.breeds.*')">
+            {{ __('Breeds') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('admin.animals.index') }}" :active="request()->routeIs('admin.animals.*')">
+            {{ __('Animals') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
+            {{ __('Users') }}
+        </x-nav-link>
+    </div>
+@endif
                 </div>
             </div>
 

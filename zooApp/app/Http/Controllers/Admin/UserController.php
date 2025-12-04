@@ -34,5 +34,29 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
     }
 
-    // add edit, update, destroy if needed
+   public function edit(User $user)
+{
+    return view('admin.users.edit', compact('user'));
+}
+
+public function update(Request $request, User $user)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,' . $user->id,
+        'password' => 'nullable|string|min:6|confirmed',
+    ]);
+
+    $user->name = $request->name;
+    $user->email = $request->email;
+
+    if($request->password) {
+        $user->password = \Illuminate\Support\Facades\Hash::make($request->password);
+    }
+
+    $user->save();
+
+    return redirect()->route('admin.users.index')->with('success', 'Потребителят е редактиран успешно.');
+}
+
 }

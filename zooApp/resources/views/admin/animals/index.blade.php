@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between mb-3">
     <h1>Animals</h1>
-    <a href="{{ route('animals.create') }}" class="btn btn-primary">Добави животно</a>
+    <a href="{{ route('admin.animals.create') }}" class="btn btn-primary">Добави животно</a>
 </div>
 
 <table class="table table-bordered">

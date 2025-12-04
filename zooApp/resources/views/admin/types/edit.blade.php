@@ -5,7 +5,7 @@
 @section('content')
 <h1>Редактирай вид</h1>
 
-<form action="{{ route('types.update', $type->id) }}" method="POST">
+<form action="{{ route('admin.types.update', $type->id) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="mb-3">

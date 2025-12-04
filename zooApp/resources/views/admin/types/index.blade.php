@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between mb-3">
     <h1>Types</h1>
-    <a href="{{ route('types.create') }}" class="btn btn-primary">Добави нов вид</a>
+    <a href="{{ route('admin.types.create') }}" class="btn btn-primary">Добави нов вид</a>
 </div>
 
 <table class="table table-bordered">

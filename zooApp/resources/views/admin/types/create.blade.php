@@ -5,7 +5,7 @@
 @section('content')
 <h1>Добави нов вид</h1>
 
-<form action="{{ route('types.store') }}" method="POST">
+<form action="{{ route('admin.types.store') }}" method="POST">
     @csrf
     <div class="mb-3">
         <label class="form-label">Име</label>

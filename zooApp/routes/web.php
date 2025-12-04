@@ -4,6 +4,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PhotoAdminController;
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Admin\BreedController;
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+
+    // Dashboard
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    // Types CRUD
+    Route::resource('types', TypeController::class);
+
+    // Breeds CRUD
+    Route::resource('breeds', BreedController::class);
+
+    // Animals CRUD
+    Route::resource('animals', AnimalController::class);
+});
 
 Route::get('/', function () {
     $animals = \App\Models\Animal::latest()->take(10)->get();

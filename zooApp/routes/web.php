@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\auth;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PhotoAdminController;
-use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\Admin\AnimalController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Admin\BreedController;
 use App\Http\Controllers\Admin\UserController;

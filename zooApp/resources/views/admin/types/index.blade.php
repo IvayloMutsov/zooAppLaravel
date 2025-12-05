@@ -22,8 +22,8 @@
             <td>{{ $type->id }}</td>
             <td>{{ $type->name }}</td>
             <td>
-                <a href="{{ route('types.edit', $type->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                <form action="{{ route('types.destroy', $type->id) }}" method="POST" style="display:inline-block">
+                <a href="{{ route('admin.types.edit', $type->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <form action="{{ route('admin.types.destroy', $type->id) }}" method="POST" style="display:inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-sm btn-danger" onclick="return confirm('Сигурни ли сте?')">Delete</button>

@@ -34,8 +34,8 @@
                 @endif
             </td>
             <td>
-                <a href="{{ route('animals.edit', $animal->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                <form action="{{ route('animals.destroy', $animal->id) }}" method="POST" style="display:inline-block">
+                <a href="{{ route('admin.animals.edit', $animal->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <form action="{{ route('admin.animals.destroy', $animal->id) }}" method="POST" style="display:inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-sm btn-danger" onclick="return confirm('Сигурни ли сте?')">Delete</button>

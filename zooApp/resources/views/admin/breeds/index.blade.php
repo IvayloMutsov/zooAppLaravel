@@ -24,8 +24,8 @@
             <td>{{ $breed->name }}</td>
             <td>{{ $breed->type->name }}</td>
             <td>
-                <a href="{{ route('breeds.edit', $breed->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                <form action="{{ route('breeds.destroy', $breed->id) }}" method="POST" style="display:inline-block">
+                <a href="{{ route('admin.breeds.edit', $breed->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <form action="{{ route('admin.breeds.destroy', $breed->id) }}" method="POST" style="display:inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-sm btn-danger" onclick="return confirm('Сигурни ли сте?')">Delete</button>

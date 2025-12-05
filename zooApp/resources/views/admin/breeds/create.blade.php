@@ -1,4 +1,4 @@
-form action="{{ route('admin.breeds.store') }}" method="POST">
+<form action="{{ route('admin.breeds.store') }}" method="POST">
     @csrf
 
     <select name="type_id" class="form-control">

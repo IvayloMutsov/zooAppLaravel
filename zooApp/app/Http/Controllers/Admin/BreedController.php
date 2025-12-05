@@ -33,7 +33,7 @@ class BreedController extends Controller
             'type_id' => $request->type_id
         ]);
 
-        return redirect()->route('breeds.index')->with('success', 'Породата е добавена успешно.');
+        return redirect()->route('admin.breeds.index')->with('success', 'Породата е добавена успешно.');
     }
 
     public function edit(Breed $breed)
@@ -54,13 +54,13 @@ class BreedController extends Controller
             'type_id' => $request->type_id
         ]);
 
-        return redirect()->route('breeds.index')->with('success', 'Породата е обновена.');
+        return redirect()->route('admin.breeds.index')->with('success', 'Породата е обновена.');
     }
 
     public function destroy(Breed $breed)
     {
         $breed->delete();
 
-        return redirect()->route('breeds.index')->with('success', 'Породата е изтрита.');
+        return redirect()->route('admin.breeds.index')->with('success', 'Породата е изтрита.');
     }
 }

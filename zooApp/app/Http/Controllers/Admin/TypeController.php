@@ -29,7 +29,7 @@ class TypeController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('types.index')->with('success', 'Видът е добавен успешно.');
+        return redirect()->route('admin.types.index')->with('success', 'Видът е добавен успешно.');
     }
 
     public function edit(Type $type)
@@ -47,13 +47,13 @@ class TypeController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('types.index')->with('success', 'Видът е обновен успешно.');
+        return redirect()->route('admin.types.index')->with('success', 'Видът е обновен успешно.');
     }
 
     public function destroy(Type $type)
     {
         $type->delete();
 
-        return redirect()->route('types.index')->with('success', 'Видът е изтрит.');
+        return redirect()->route('admin.types.index')->with('success', 'Видът е изтрит.');
     }
 }

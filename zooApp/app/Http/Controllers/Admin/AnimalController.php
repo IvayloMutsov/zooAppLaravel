@@ -43,7 +43,7 @@ class AnimalController extends Controller
 
         Animal::create($data);
 
-        return redirect()->route('animals.index')->with('success', 'Животното е добавено успешно.');
+        return redirect()->route('admin.animals.index')->with('success', 'Животното е добавено успешно.');
     }
 
     public function edit(Animal $animal)
@@ -73,12 +73,12 @@ class AnimalController extends Controller
 
         $animal->update($data);
 
-        return redirect()->route('animals.index')->with('success', 'Животното е обновено успешно.');
+        return redirect()->route('admin.animals.index')->with('success', 'Животното е обновено успешно.');
     }
 
     public function destroy(Animal $animal)
     {
         $animal->delete();
-        return redirect()->route('animals.index')->with('success', 'Животното е изтрито.');
+        return redirect()->route('admin.animals.index')->with('success', 'Животното е изтрито.');
     }
 }
